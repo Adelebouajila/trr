@@ -1,0 +1,176 @@
+/* Custom styles to hide navigation bar except on admin page */
+
+/* Hide entire header/top bar on all pages */
+header,
+.header,
+[role="banner"],
+nav {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+/* Show header only on admin page */
+body[data-path="/admin"] header,
+body[data-path="/admin"] .header,
+body[data-path="/admin"] [role="banner"],
+body[data-path="/admin"] nav {
+  display: flex !important;
+  visibility: visible !important;
+  height: auto !important;
+}
+
+/* Ensure proper theme color throughout the app */
+:root {
+  --primary-color: #0073e6;
+  --primary-text-color: white;
+}
+
+/* Fix any header buttons to ensure white text */
+header button, 
+header .btn,
+header [role="button"] {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Update all button and link colors to match #0073e6 */
+button, 
+.btn,
+.button,
+a.btn,
+[role="button"],
+[type="button"],
+[type="submit"] {
+  background-color: #0073e6 !important;
+  border-color: #0073e6 !important;
+  color: white !important; /* Ensure text on blue background is white */
+}
+
+/* Button text and icons should always be white */
+button *, 
+.btn *,
+.button *,
+a.btn *,
+[role="button"] *,
+[type="button"] *,
+[type="submit"] * {
+  color: white !important;
+}
+
+a:not(.btn), .link {
+  color: #0073e6 !important;
+}
+
+/* Override any primary color classes */
+.bg-primary,
+.text-primary-foreground {
+  background-color: #0073e6 !important;
+  color: white !important;
+}
+
+.text-primary {
+  color: #0073e6 !important;
+}
+
+/* Additional style enhancements */
+.tour-card:hover {
+  border-color: #0073e6 !important;
+  box-shadow: 0 0 10px rgba(0, 115, 230, 0.3) !important;
+}
+
+/* Blue focus rings */
+*:focus {
+  outline-color: #0073e6 !important;
+}
+
+/* === FLAG SIZING FIXES === */
+/* Comprehensive flag size control for phone number and language selectors */
+
+/* Target all flag elements universally */
+svg[role="img"],
+img[alt*="flag"],
+img[src*="flagcdn"],
+img[src*="flag"],
+.react-country-flag,
+[class*="flag"] img,
+[class*="flag"] svg {
+  width: 16px !important;
+  height: 12px !important;
+  max-width: 16px !important;
+  max-height: 12px !important;
+  min-width: 16px !important;
+  min-height: 12px !important;
+  object-fit: cover !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  transform: none !important;
+  scale: 1 !important;
+  zoom: 1 !important;
+}
+
+/* Radix Select component specific targeting */
+[data-radix-select-content] svg[role="img"],
+[data-radix-select-content] img,
+[data-radix-select-item] svg[role="img"],
+[data-radix-select-item] img,
+[data-radix-select-trigger] svg[role="img"],
+[data-radix-select-trigger] img,
+[data-radix-select-viewport] svg[role="img"],
+[data-radix-select-viewport] img {
+  width: 16px !important;
+  height: 12px !important;
+  max-width: 16px !important;
+  max-height: 12px !important;
+  min-width: 16px !important;
+  min-height: 12px !important;
+  object-fit: cover !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
+  scale: 1 !important;
+}
+
+/* Select dropdown containers */
+[data-radix-select-content],
+[data-radix-select-item],
+[data-radix-select-trigger] {
+  line-height: 1.5 !important;
+}
+
+/* Flex container adjustments */
+[data-radix-select-content] .flex,
+[data-radix-select-item] .flex,
+[data-radix-select-trigger] .flex {
+  align-items: center !important;
+  gap: 8px !important;
+  height: auto !important;
+  overflow: hidden !important;
+}
+
+/* Force override any library styles */
+div[style*="width"][style*="height"] svg[role="img"],
+div[style*="width"][style*="height"] img[src*="flag"] {
+  width: 16px !important;
+  height: 12px !important;
+}
+
+/* Button container fixes for language/phone selectors */
+button:has(svg[role="img"]),
+button:has(img[src*="flag"]) {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 12px !important;
+  height: auto !important;
+  min-height: 36px !important;
+}
+
+/* Specific targeting for React Country Flag component */
+.react-country-flag svg,
+.react-country-flag img {
+  width: 16px !important;
+  height: 12px !important;
+  max-width: 16px !important;
+  max-height: 12px !important;
+}
